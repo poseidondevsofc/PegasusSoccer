@@ -1,0 +1,89 @@
+/* style.css - Neon Futurista Pegasus */
+:root{
+  --bg1:#061229; --bg2:#0a1530;
+  --accent:#00eaff; --accent2:#7b2cff;
+  --glass: rgba(255,255,255,0.06);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(30,40,80,0.6), transparent), linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:#eaf6ff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:12px;
+  padding:18px;
+}
+.splash{
+  width:920px;
+  max-width:95%;
+  padding:34px;
+  border-radius:16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6), 0 0 40px rgba(123,44,255,0.08) inset;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  backdrop-filter: blur(6px);
+}
+.logo{
+  font-weight:800;
+  letter-spacing:4px;
+  font-size:48px;
+  color:var(--accent);
+  text-shadow: 0 0 18px rgba(0,234,255,0.25), 0 0 36px rgba(123,44,255,0.12);
+}
+.logo span{color:var(--accent2); margin-left:8px}
+.btn{
+  appearance:none;
+  border:0;
+  background: linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#021;
+  padding:12px 22px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(123,44,255,0.12);
+}
+.btn.small{padding:6px 10px; font-size:13px; border-radius:8px}
+.hidden{display:none}
+.topbar{
+  width:920px;
+  max-width:95%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 14px;
+  background:var(--glass);
+  border-radius:12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+.score{
+  font-size:20px;
+  font-weight:700;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), transparent);
+  padding:8px 12px;
+  border-radius:10px;
+  text-shadow: 0 0 8px rgba(0,234,255,0.08);
+}
+.gamewrap{width:920px; max-width:95%; display:flex; flex-direction:column; gap:10px; align-items:center}
+canvas{
+  width:100%;
+  max-width:920px;
+  height:auto;
+  border-radius:14px;
+  box-shadow: 0 20px 60px rgba(3,10,30,0.7), 0 0 40px rgba(0,234,255,0.06) inset;
+  background: linear-gradient(180deg,#0b5a2d 0%, #0a4f25 100%);
+  border:3px solid rgba(0,234,255,0.06);
+}
+.hint{opacity:0.85; font-size:14px}
+.overlay{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7))}
+.panel{background:linear-gradient(180deg, rgba(10,15,30,0.9), rgba(8,12,22,0.95)); border-radius:12px; padding:20px; width:420px; color:#dff8ff; box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.small{font-size:12px; opacity:0.8}

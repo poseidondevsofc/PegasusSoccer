@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pegasus Soccer ⚡</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="splash" class="splash">
+    <div class="logo">PEGASUS <span>SOCCER</span></div>
+    <button id="startBtn" class="btn">JOGAR</button>
+    <div class="small">Pressione <em>H</em> para ajuda</div>
+  </div>
+
+  <div id="ui" class="hidden">
+    <header class="topbar">
+      <div class="score" id="score">0 - 0</div>
+      <div class="controls">
+        <button id="restartBtn" class="btn small">Reiniciar</button>
+        <button id="muteBtn" class="btn small">🔊</button>
+      </div>
+    </header>
+
+    <main class="gamewrap">
+      <canvas id="gameCanvas" width="900" height="600" aria-label="Campo de Pegasus Soccer"></canvas>
+      <div id="hint" class="hint">Clique e arraste o jogador para chutar. Turno: Jogador <span id="turn">1</span></div>
+    </main>
+  </div>
+
+  <div id="help" class="overlay hidden">
+    <div class="panel">
+      <h2>Como Jogar</h2>
+      <ul>
+        <li>Arraste um jogador para definir direção e solte para chutar.</li>
+        <li>Turnos alternados entre Jogador 1 e 2.</li>
+        <li>Objetivo: marcar gols.</li>
+      </ul>
+      <button id="closeHelp" class="btn">Fechar</button>
+    </div>
+  </div>
+
+<script>
+/*
+  Pegasus Soccer - Professional Neon Version
+  Cheats (hidden): Console activation only.
+  To enable cheats (developer-only), run in browser console:
+    window.__pegasusActivate('bb30490eb73240408a4736cc4c775f7c');
+  After activation you can call:
+    window.__pegasusCheat('freezeOpponent', 30); // freezes opponent for 30s
+    window.__pegasusCheat('stopTime', 10);       // pauses physics for 10s
+  You can also toggle an invisible "cheat mode" flag: window.__pegasusCheat('toggle')
+*/
+
+</script>
+<script src="game.js"></script>
+</body>
+</html>
