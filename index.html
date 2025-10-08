@@ -1,44 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Pegasus Soccer ⚡</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pegasus Soccer</title>
+<style>
+  body{margin:0;font-family:sans-serif;background:#111;color:#fff;overflow:hidden;}
+  #splash,#help,#ui{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+  #splash{background:#111;flex-direction:column;z-index:100;}
+  #splash button{padding:12px 24px;font-size:20px;cursor:pointer;}
+  #help{background:rgba(0,0,0,0.85);flex-direction:column;z-index:200;}
+  #help.hidden{display:none;}
+  #help button{margin-top:20px;padding:8px 16px;}
+  #ui{display:none;flex-direction:column;align-items:center;z-index:50;}
+  #score,#turn,#hint{margin:8px;}
+  canvas{display:block;margin:0 auto;background:#054a2d;}
+  #restartBtn,#muteBtn{position:absolute;top:10px;padding:6px 10px;cursor:pointer;}
+  #restartBtn{right:100px;} #muteBtn{right:10px;}
+</style>
 </head>
 <body>
-  <div id="splash" class="splash">
-    <div class="logo">PEGASUS <span>SOCCER</span></div>
-    <button id="startBtn" class="btn" aria-label="Iniciar jogo">JOGAR</button>
-    <div class="small">Pressione <em>H</em> para ajuda</div>
-  </div>
 
-  <div id="ui" class="hidden" role="application" aria-hidden="true">
-    <header class="topbar">
-      <div class="score" id="score">0 - 0</div>
-      <div class="controls">
-        <button id="restartBtn" class="btn small">Reiniciar</button>
-        <button id="muteBtn" class="btn small" id="mute">🔊</button>
-      </div>
-    </header>
+<div id="splash">
+  <h1>Pegasus Soccer</h1>
+  <button id="startBtn">JOGAR</button>
+</div>
 
-    <main class="gamewrap">
-      <canvas id="gameCanvas" width="900" height="600" aria-label="Campo de Pegasus Soccer"></canvas>
-      <div id="hint" class="hint">Clique e arraste o jogador para chutar. Turno: Jogador <span id="turn">1</span></div>
-    </main>
-  </div>
+<div id="help" class="hidden" aria-hidden="true">
+  <h2>Como Jogar</h2>
+  <p>Arraste seu jogador para chutar a bola.</p>
+  <p>Pressione H para abrir/fechar este menu.</p>
+  <button id="closeHelp">Fechar</button>
+</div>
 
-  <div id="help" class="overlay hidden" aria-hidden="true">
-    <div class="panel">
-      <h2>Como Jogar</h2>
-      <ul>
-        <li>Arraste um jogador para definir direção e solte para chutar.</li>
-        <li>Turnos alternados entre Jogador 1 e 2.</li>
-        <li>Objetivo: marcar gols.</li>
-      </ul>
-      <button id="closeHelp" class="btn">Fechar</button>
-    </div>
-  </div>
+<div id="ui" aria-hidden="true">
+  <div id="score">0 - 0</div>
+  <div id="turn">1</div>
+  <div id="hint">Use o mouse ou toque para mover seu jogador</div>
+  <canvas id="gameCanvas" width="900" height="600"></canvas>
+  <button id="restartBtn">Reiniciar</button>
+  <button id="muteBtn">🔊</button>
+</div>
 
 <script src="game.js"></script>
 </body>
